@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"
+        android:background="@drawable/rect_gray">
+        <!--农历日期-->
+        <TextView
+            android:id="@+id/nongli_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:ems="1"
+            android:text="农历十月初十"
+            android:textColor="@color/black"
+            android:textSize="50dp" />
+        <!--八卦年月日-->
+        <TextView
+            android:id="@+id/bazi_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/nongli_tv"
+            android:ems="1"
+            android:text="庚子鼠年   丁亥月   辛未日   星期二"
+            android:textSize="23dp" />
+
+<!--时辰-->
+        <TextView
+            android:id="@+id/shichen_tv"
+            android:textColor="@color/black"
+            android:layout_below="@id/nongli_tv"
+            android:layout_marginTop="50dp"
+            android:textSize="30dp"
+            android:layout_alignStart="@id/nongli_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <!--分割线-->
+        <View
+            android:id="@+id/line_1"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/bazi_tv"
+            android:background="@color/black" />
+        <!--分割线-->
+        <View
+            android:id="@+id/line_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/line_1"
+            android:background="@color/black" />
+        <!--五行 冲煞 彭祖-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignStart="@id/line_1"
+            android:layout_alignBottom="@id/line_2">
+            <!--纳音五行-->
+            <TextView
+                android:id="@+id/wuxing_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:text="五行  路旁土"
+                android:textSize="15dp" />
+            <!--冲煞-->
+            <TextView
+                android:id="@+id/chongsha_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/wuxing_tv"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="55dp"
+                android:text="冲煞  冲(乙丑)牛 煞西"
+                android:textSize="15dp" />
+
+            <!--彭祖-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/wuxing_tv"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp">
+                <!--彭祖-->
+                <TextView
+                    android:id="@+id/pengzu_tv_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="彭祖"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+                <!--彭祖-->
+                <TextView
+                    android:id="@+id/pengzu_tv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toEndOf="@+id/pengzu_tv_1"
+                    android:text="辛不合酱主人不尝\n未不服药毒气入肠"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+        <!--喜神 福神 财神 今日宜忌-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/line_2"
+            android:layout_toEndOf="@id/line_1">
+            <!--喜神-->
+            <TextView
+                android:gravity="center"
+                android:id="@+id/xishen_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:ems="2"
+                android:text="喜神西南"
+                android:textSize="18dp" />
+            <!--福神-->
+            <TextView
+                android:gravity="center"
+                android:id="@+id/fushen_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:ems="2"
+                android:text="福神西南"
+                android:textSize="18dp" />
+            <!--财神-->
+            <TextView
+                android:gravity="center"
+                android:id="@+id/caishen_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:ems="2"
+                android:text="财神正东"
+                android:textSize="18dp" />
+            <!--今日宜-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true">
+                <!--今日宜-->
+                <TextView
+                    android:id="@+id/yi_tv1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/circular_green"
+                    android:gravity="center"
+                    android:text="宜"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+                <!--今日宜-->
+                <TextView
+                    android:id="@+id/yi_tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toEndOf="@id/yi_tv1"
+                    android:text="祭祀 祈福 订盟 纳采 裁衣 合帐 冠笄 安机械 安床 造畜稠 入殓 移柩 启钻 安葬 谢土 除服 成服 会亲友 竖柱 上梁 经络 开市 交易 立券 纳财 纳畜 筑堤"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+            <!--今日宜-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp">
+                <!--今日忌-->
+                <TextView
+                    android:id="@+id/ji_tv1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/circular_red"
+                    android:gravity="center"
+                    android:text="忌"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+                <!--今日忌-->
+                <TextView
+                    android:id="@+id/ji_tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toEndOf="@id/ji_tv1"
+                    android:gravity="center"
+                    android:text="嫁娶 入宅 治病 赴任"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
